@@ -1136,7 +1136,7 @@ b {
     margin: 0 auto;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 600px) {
     .header-wrap {
       height: 45px;
     }
