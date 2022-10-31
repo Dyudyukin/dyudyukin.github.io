@@ -7,6 +7,18 @@ const inputRating = document.querySelector('.feedback__rating');
 const inputRatingError = document.querySelector('.feedback__error-rating');
 const inputs = form.querySelectorAll('input, textarea');
 
+let swiper = new Swiper(".mySwiper", {
+  loop: true,
+  spaceBetween: 20,
+  slidesPerView: 'auto',
+  loopedSlides: 3,
+  breakpoints: {
+    320: {
+      spaceBetween: 5
+    }
+  }
+});
+
 let removeError = () => {
   inputName.classList.remove('error');
   inputNameError.classList.remove('error')
