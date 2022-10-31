@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/swiper-bundle.min.css"> -->
     <script defer src="./js/page-product.js"></script>
     <title>МойМаркет</title>
   </head>
@@ -68,15 +69,17 @@
 
     <section class="gallery">
       <h2 class="gallery__name">Смартфон Apple iPhone 13, синий</h2>
-      <div class="gallery__item">
-        <img src="./img/image-1.webp" alt="Общий вид телефона, экран на первом плане">
-        <img src="./img/image-2.webp" alt="Экран телефона, вид спереди">
-        <img src="./img/image-3.webp" alt="Общий вид телефона, под углом">
-        <img src="./img/image-4.webp" alt="Крупное фото основной камеры">
-        <img src="./img/image-5.webp" alt="Общий вид телефона, задняя панель на первом плане">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./img/image-1.webp" alt="Общий вид телефона, экран на первом плане"></div>
+          <div class="swiper-slide"><img src="./img/image-2.webp" alt="Экран телефона, вид спереди"></div>
+          <div class="swiper-slide"><img src="./img/image-3.webp" alt="Общий вид телефона, под углом"></div>
+          <div class="swiper-slide"><img src="./img/image-4.webp" alt="Крупное фото основной камеры"></div>
+          <div class="swiper-slide"><img src="./img/image-5.webp" alt="Общий вид телефона, задняя панель на первом плане"></div>
+        </div>
       </div>
     </section>
-
+    
     <div class="center-wrap">
 
       <div class="center-wrap__left">
@@ -378,7 +381,7 @@
       </span>
     </div>
   </footer>
-  
+  <script src="./js/swiper-bundle.min.js"></script>
 </body>
 </html>
 
