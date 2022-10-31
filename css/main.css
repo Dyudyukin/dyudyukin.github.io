@@ -1,3 +1,5 @@
+@import url("swiper-bundle.min.css") (max-width: 600px);
+
 *,
 *::before,
 *::after {
@@ -9,7 +11,7 @@
 }
 
 .wrapper {
-  max-width: 1500px;
+  max-width: 1400px;
   padding: 0 50px;
   margin: 0 auto;
   transition: all 0.5s ease-out;
@@ -46,7 +48,7 @@ a:active {
   justify-content: space-between;
   align-items: center;
   gap: 100px;
-  max-width: 1500px;
+  max-width: 1400px;
   padding: 0 50px;
   position: fixed;
   inset: auto 0;
@@ -1041,6 +1043,44 @@ b {
   animation: pulse 1s ease-in-out;
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  /* width: 100%; */
+  height: 380px;
+  object-fit: cover;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
 @keyframes pulse {
   from {
     transform: scale(1.7);
@@ -1154,6 +1194,7 @@ b {
     padding: 0 15px;
     margin: 0 auto;
   }
+
 
   @media (max-width: 600px) {
     .wrapper {
@@ -1363,6 +1404,10 @@ b {
 
     .footer__up {
       margin-bottom: 20px;
+    }
+
+    .swiper-wrapper {
+      display: flex
     }
   }
 }
