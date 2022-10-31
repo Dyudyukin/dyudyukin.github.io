@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <!-- <script defer src="./js/homework23.js"></script> -->
+    <script defer src="./js/page-product.js"></script>
     <title>МойМаркет</title>
   </head>
 
@@ -88,41 +88,35 @@
               <input id="color-red" type="radio" name="choice-color" value="Red">
               <label for="color-red">
                 <img class="color-choice__img" src="./img/color-1.webp" alt="Красный цвет">
-                <span class="redd"></span>
               </label>
             </li>       
             <li class="color-choice__btn">
               <input id="color-green" type="radio" name="choice-color" value="Green">
               <label for="color-green">
                 <img class="color-choice__img" src="./img/color-2.webp" alt="Зелёный цвет">
-                <span class="grenn"></span>
               </label>
             </li>
             <li class="color-choice__btn">
               <input id="color-pink" type="radio" name="choice-color" value="Pink">
               <label for="color-pink">
                 <img class="color-choice__img" src="./img/color-3.webp" alt="Розовый цвет">
-                <span class="pinkk"></span>
               </label>
             </li>       
             <li class="color-choice__btn">
               <input id="color-blue" type="radio" name="choice-color" value="Blue" checked>
               <label for="color-blue">
                 <img class="color-choice__img" src="./img/color-4.webp" alt="Синий цвет">
-                <span class="bluee"></span>
               </label>
             </li>
             <li class="color-choice__btn">
               <input id="color-white" type="radio" name="choice-color" value="White">
               <label for="color-white">
                 <img class="color-choice__img" src="./img/color-5.webp" alt="Белый цвет">
-                <span class="whitee"></span>
               </label>
             </li>
             <li class="color-choice__btn">
               <input id="color-black" type="radio" name="choice-color" value="Black">
               <label for="color-black"><img class="color-choice__img" src="./img/color-6.webp" alt="Чёрный цвет">
-                <span class="blackk"></span>
               </label>
             </li>
           </ul>
@@ -311,17 +305,23 @@
         </section>
 
         <section class="feedback">
-          <form class="feedback-form" method="POST" action="#!">
+          <form class="feedback-form" action="https://echo.htmlacademy.ru/" method="POST">
             <div class="feedback__list feedback-margin-left">
               <h3>Добавить свой отзыв</h3>
               <div class="feedback__contact">
-                <input class="feedback__name" type="text" id="name" placeholder="Имя и фамилия">
-                <input class="feedback__rating" type="number" id="rating" min="1" max="5" placeholder="Оценка">
+                <div class="feedback__fields">
+                  <input class="feedback__name" type="text" name="name" id="name" placeholder="Имя и фамилия">
+                  <input class="feedback__rating" type="number" name="rating" id="rating" placeholder="Оценка">
+                </div>
+                <div class="feedback__error">
+                  <div class="feedback__error-name"></div>
+                  <div class="feedback__error-rating"></div>
+                </div>
               </div>
               <div class="feedback__text">
-                <textarea class="feedback__textarea" placeholder="Текст отзыва"></textarea>
+                <textarea class="feedback__textarea" name="feedback" placeholder="Текст отзыва"></textarea>
               </div>
-              <button class="feedback__button" aria-label="Отправить отзыв" type="button">Отправить отзыв</button>
+              <button class="feedback__button" aria-label="Отправить отзыв" type="submit">Отправить отзыв</button>
             </div>
           </form>
         </section>
