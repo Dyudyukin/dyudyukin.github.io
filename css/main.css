@@ -807,7 +807,7 @@ b {
   align-items: flex-start;
   padding: 0px;
   gap: 10px;
-  max-width: 420px;
+  width: 420px;
 }
 
 .advert__name {
