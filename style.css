@@ -41,7 +41,7 @@ body {
   flex-direction: column;
   background-color: aliceblue;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 480px;
   height: 600px;
   border-radius: 50px;
   margin-top: 5vh;
