@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  ;
+}
+
+.success {
+  background: #07bc0c;
+  border: 2px solid #07bc0c !important;
+}
+
+.warning {
+  background: #f1c40f;
+  border: 2px solid #f1c40f !important;
+}
+
+.error {
+  background: #c7c7c7;
+  border: 2px solid #c7c7c7 !important;
+}
+
+.winner {
+  border: 3px solid green;
+  filter: drop-shadow(0px 0px 30px rgba(0,128,0,0.3));
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: aliceblue;
+  margin: 0 auto;
+  width: 500px;
+  height: 600px;
+  border-radius: 50px;
+  margin-top: 5vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.input-text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.option {
+  width: 320px;
+  height: 50px;
+  font-size: 30px;
+  padding: 5px 10px;
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.option::placeholder {
+  letter-spacing: 0px;
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.option:focus::placeholder {
+  opacity: 0;
+}
+
+#send {
+  display: none;
+}
+
+.word-list {
+  display: flex;
+  gap: 5px;
+  margin: 3px;
+  padding: 0;
+}
+
+.word-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  width: 60px;
+  height: 70px;
+  border: 2px solid gray;
+  color: white;
+  font-weight: 600;
+  list-style: none;
+  padding-bottom: 5px;
+}
