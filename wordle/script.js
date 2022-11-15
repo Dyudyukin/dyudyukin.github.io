@@ -14,15 +14,14 @@ const line_5 = main.querySelectorAll('.line-5 > ul > li');
 
 const wordDay = 'метла';
 let word = wordDay.toUpperCase().split('');
-let arr = [];
-let x = line_1;
+let lineNumber = line_1;
 
 function addWord(line) {
-  
   let wordValueArr = wordValue.value.toUpperCase().split('');
   wordValue.value = '';
   line.forEach(function (cell, index) {
     cell.textContent = wordValueArr[index];
+    cell.classList.add('error');
     if (word.includes(cell.textContent)) {
       cell.classList.add('warning');
     } 
@@ -34,8 +33,12 @@ function addWord(line) {
       cell.classList.remove('error');
       cell.classList.add('success');
     }
+    if(cell.classList.contains('warning') !== cell.classList.contains('success')){
+      cell.classList.remove('warning')
+    }
   })
-  const winner = [...x].every(el => el.classList.contains('success'));
+
+  const winner = [...lineNumber].every(el => el.classList.contains('success'));
   if (winner) {
     app.classList.add('winner')
     input.disabled = true
@@ -47,24 +50,21 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
   if (wordValue.value.length !== 5) return false
   if (line_1[0].textContent !== '') {
-    x = line_2
+    lineNumber = line_2
   }
   if (line_2[0].textContent !== '') {
-    x = line_3
+    lineNumber = line_3
   }
   if (line_3[0].textContent !== '') {
-    x = line_4
+    lineNumber = line_4
   }
   if (line_4[0].textContent !== '') {
-    x = line_5
+    lineNumber = line_5
   }
   if (line_5[0].textContent !== '') {
   }
   
-  addWord(x);
-  // allCorrect(x);
-  
-
+  addWord(lineNumber);
 })
 
 input.addEventListener('input', function (e) {
