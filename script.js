@@ -12,7 +12,7 @@ const line_3 = main.querySelectorAll('.line-3 > ul > li');
 const line_4 = main.querySelectorAll('.line-4 > ul > li');
 const line_5 = main.querySelectorAll('.line-5 > ul > li');
 
-const wordDay = 'тепло';
+const wordDay = 'метла';
 let word = wordDay.toUpperCase().split('');
 let lineNumber = line_1;
 
@@ -32,7 +32,7 @@ function addWord(line) {
       cell.classList.remove('warning');
       cell.classList.remove('error');
       cell.classList.add('success');
-    }
+    }    
   })
 
   const winner = [...lineNumber].every(el => el.classList.contains('success'));
@@ -40,6 +40,26 @@ function addWord(line) {
     app.classList.add('winner')
     input.disabled = true
   }
+}
+
+function delRepeat(line) {
+  let lineUp = [...line]
+  let one;
+  let two = [];
+  let repeat;
+  lineUp.map(function (cell, index) {
+    if (cell.classList.contains('warning')) {
+      repeat = cell;
+      one = cell.innerHTML;
+    }
+    if (cell.classList.contains('success')) {
+      two += cell.innerHTML
+    }
+    if (two.includes(one)) {
+      repeat.classList.remove('warning');
+      repeat.classList.add('error');
+    }
+  }); return 
 }
 
 
@@ -62,9 +82,10 @@ form.addEventListener('submit', function (e) {
   }
  
   addWord(lineNumber);
+  delRepeat(lineNumber);
 })
 
 input.addEventListener('input', function (e) {
-  let regExp = /[A-Za-z0-9!@"№;:.,<>()#$%&'*+/=?^_`{|}~-\s]/;
+  let regExp = /[A-Za-z0-9!@"№;:.,<>()#$%&'*+/=?^_`\[\]{|}~-\s]/;
   wordValue.value = wordValue.value.replace(regExp, '')
 })
