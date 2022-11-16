@@ -12,7 +12,7 @@ const line_3 = main.querySelectorAll('.line-3 > ul > li');
 const line_4 = main.querySelectorAll('.line-4 > ul > li');
 const line_5 = main.querySelectorAll('.line-5 > ul > li');
 
-const wordDay = 'метла';
+const wordDay = 'букля';
 let word = wordDay.toUpperCase().split('');
 let lineNumber = line_1;
 
