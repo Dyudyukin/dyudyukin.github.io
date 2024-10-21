@@ -46,7 +46,7 @@ const startTimer = () => {
 // Показать крота
 const showMole = () => {
   let randomIndex;
-  let previousIndex;
+  let previousIndex = -1;
   do {
     randomIndex = getRandomNumber(0, 9);
   } while (randomIndex === previousIndex);
