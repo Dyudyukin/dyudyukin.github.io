@@ -2,7 +2,7 @@ let isGameActive = false;
 let score = 0;
 let rounds = 3;
 
-let timer; 
+let timer;
 // let countdown = 5; // 5 секунд
 
 const startButton = document.getElementById('start-button');
@@ -24,12 +24,14 @@ const startGame = () => {
 
 // Запуск таймера
 const startTimer = () => {
-    timer = setTimeout(() => {
+  timer = setTimeout(() => {
     endGame(false); // Завершить игру по истечении времени
   }, 5000);
 }
 
- // Обратный отсчёт
+
+// TODO - Необходимо доделать корректную отрисовку обратного отсчёта.
+// Обратный отсчёт
 // const startCountdown = () => {
 //   const countdownTimeout = setTimeout(() => {
 //     messageElement.textContent = `Осталось ${countdown} секунд на ход`;
@@ -50,7 +52,7 @@ const showMole = () => {
   do {
     randomIndex = getRandomNumber(0, 9);
   } while (randomIndex === previousIndex);
-  
+
   cells[randomIndex].textContent = '🐹';
   previousIndex = randomIndex; // Сохраняем предыдущий индекс
 }
@@ -72,20 +74,19 @@ const getRandomNumber = (min, max) => {
 const handleCellClick = (cell) => {
   clearTimeout(timer); // Остановить таймер при клике на ячейку.
   startTimer(); // Перезапустить таймер при каждом клике
-  if(cell.textContent === '🐹') {
+  if (cell.textContent === '🐹') {
     score += 1;
     rounds -= 1;
     // countdown = 5;
     updateLabels();
-    if(score > 2) {
+    if (score > 2) {
       endGame(true);
     } else {
       hideMole();
       showMole();
     }
-    
   } else {
-        endGame(false);
+    endGame(false);
   }
 }
 
@@ -111,7 +112,7 @@ const endGame = (win) => {
   cells.forEach(cell => cell.classList.remove('active')); // Клетки становятся неактивными
   isGameActive = false;
   startButton.disabled = false;
-  if(win) {
+  if (win) {
     alert('Вы выиграли! 🎉');
     messageElement.textContent = 'Вы выиграли! Чтобы начать игру, нажмите Старт!';
   } else {
@@ -126,9 +127,9 @@ startButton.addEventListener('click', () => {
 })
 
 cells.forEach((cell) => {
-    cell.addEventListener('click', () => {
-      if(isGameActive) {
-        handleCellClick(cell);
-      }
-    })
+  cell.addEventListener('click', () => {
+    if (isGameActive) {
+      handleCellClick(cell);
+    }
+  })
 })
